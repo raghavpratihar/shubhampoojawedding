@@ -70,8 +70,6 @@ export default function App() {
               <span className="block font-script text-6xl sm:text-8xl md:text-9xl text-rose leading-none">{couple.bride}</span>
             </h1>
             <p className="mt-3 font-serif-display text-sm sm:text-lg text-foreground/80">({couple.brideLineage})</p>
-            <p className="mt-8 font-serif-display text-lg sm:text-2xl font-semibold text-rose-deep">on {weddingDate.label}</p>
-            <p className="mt-1 font-serif-display italic text-base text-foreground/80 pb-12">as per programme</p>
           </div>
         </section>
 

@@ -24,37 +24,47 @@ export const shlokas = [
 export const weddingDate = {
   label: "Friday, 27th November 2026",
   short: "27th Nov 2026",
-  scratchReveal: "26th & 27th Nov 2026",
+  scratchReveal: "27th Nov 2026",
   // Countdown target (IST)
   countdownTarget: "2026-11-27T00:00:00+05:30",
 };
 
+export const residence = {
+  label: "All Functions",
+  name: "Bhatnagar Residence",
+  address: "H.No. 19/5, Spring Field Colony, Sector-32, Faridabad - 121003 (Hr.)",
+  mapQuery: "Spring Field Colony, Sector 32, Faridabad, Haryana 121003",
+};
+
 export const venue = {
+  label: "Wedding (Reassemble of Barat)",
   name: "Girraj Sharma Farm House",
   address: "Ashoka Enclave, Faridabad - 121003",
   mapQuery: "Girraj Sharma Farm House, Ashoka Enclave, Faridabad",
 };
 
-const venueLine = `${venue.name}, ${venue.address}`;
+export const locations = [residence, venue];
+
+const at = (place) => `${place.name}, ${place.address}`;
 
 export const eventDays = [
   {
     day: "Thursday, 26th November 2026",
     events: [
-      { title: "Haldi", desc: "A golden beginning to a beautiful journey", time: "10:00 AM", image: img("haldi.png") },
-      { title: "Mehendi", desc: "Henna, laughter and colours of love", time: "6:00 PM", image: img("mehendi.png") },
-      { title: "Sangeet", desc: "A night of music, dance and cherished memories", time: "7:00 PM", image: img("sanget.png") },
+      { title: "Haldi", desc: "A golden beginning to a beautiful journey", time: "10:00 AM", image: img("haldi.png"), venue: at(residence) },
+      { title: "Mehendi", desc: "Henna, laughter and colours of love", time: "6:00 PM", image: img("mehendi.png"), venue: at(residence) },
+      { title: "Sangeet", desc: "A night of music, dance and cherished memories", time: "7:00 PM", image: img("sanget.png"), venue: at(residence) },
     ],
   },
   {
     day: "Friday, 27th November 2026",
     events: [
-      { title: "Sehrabandi & Ghurchari", desc: "The groom dons the sehra and mounts the ghodi", time: "5:00 PM", image: img("varmal.png") },
-      { title: "Departure of Barat", desc: "The baraat sets off with music and dance", time: "6:00 PM", image: img("recept.jpg") },
-      { title: "Reassemble of Barat", desc: "The baraat gathers for the wedding ceremony", time: "7:00 PM", image: img("phere.png") },
+      { title: "Sehrabandi & Ghurchari", desc: "The groom dons the sehra and mounts the ghodi", time: "5:00 PM", image: img("varmal.png"), venue: at(residence) },
+      { title: "Departure of Barat", desc: "The baraat sets off with music and dance", time: "6:00 PM", image: img("recept.jpg"), venue: at(residence) },
+      { title: "Reassemble of Barat", desc: "The baraat gathers for the wedding ceremony", time: "7:00 PM", image: img("phere.png"), venue: at(venue) },
     ],
   },
-].map((d) => ({ ...d, events: d.events.map((e) => ({ ...e, venue: venueLine })) }));
+];
 
 export const rsvp = [
   "Sachin Bhatnagar (Chacha)",

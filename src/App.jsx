@@ -9,16 +9,16 @@ import {
   hosts,
   shlokas,
   weddingDate,
-  venue,
+  locations,
   eventDays,
   rsvp,
   compliments,
   awaitingEyes,
 } from "./data/wedding";
 
-const mapQuery = encodeURIComponent(venue.mapQuery);
-const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}&travelmode=driving`;
+const mapEmbedUrl = (place) => `https://www.google.com/maps?q=${encodeURIComponent(place.mapQuery)}&output=embed`;
+const directionsUrl = (place) =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(place.mapQuery)}&travelmode=driving`;
 
 const Divider = ({ width = "w-16" }) => (
   <div className="my-6 flex items-center justify-center gap-3">
@@ -183,32 +183,40 @@ export default function App() {
 
         {/* Map Location */}
         <section className="relative py-20 px-6 bg-cream">
-          <div className="relative max-w-4xl mx-auto text-center">
+          <div className="relative max-w-6xl mx-auto text-center">
             <p className="font-cinzel text-xs text-sage-deep tracking-widest">VENUE</p>
-            <h2 className="font-script text-4xl sm:text-5xl text-rose-deep mt-2">{venue.name}</h2>
+            <h2 className="font-script text-4xl sm:text-5xl text-rose-deep mt-2">Where We Celebrate</h2>
             <Divider />
-            <p className="font-serif-display text-lg sm:text-xl text-foreground/80">{venue.address}</p>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-gold-soft shadow-elegant">
-              <iframe
-                src={mapEmbedUrl}
-                width="100%"
-                height="360"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title={`${venue.name} Location`}
-              />
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+              {locations.map((place) => (
+                <article key={place.name}>
+                  <p className="font-cinzel text-xs text-sage-deep tracking-widest uppercase">{place.label}</p>
+                  <h3 className="mt-2 font-script text-4xl text-rose-deep">{place.name}</h3>
+                  <p className="mt-2 font-serif-display text-lg text-foreground/80">{place.address}</p>
+                  <div className="mt-4 overflow-hidden rounded-2xl border border-gold-soft shadow-elegant">
+                    <iframe
+                      src={mapEmbedUrl(place)}
+                      width="100%"
+                      height="320"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      title={`${place.name} Location`}
+                    />
+                  </div>
+                  <a
+                    href={directionsUrl(place)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 mt-5 text-sm font-medium gradient-gold text-white rounded-full px-8 py-3 shadow-gold hover:opacity-90"
+                  >
+                    <Navigation className="h-4 w-4" />
+                    Get Directions
+                  </a>
+                </article>
+              ))}
             </div>
-            <a
-              href={directionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 mt-5 text-sm font-medium gradient-gold text-white rounded-full px-8 py-3 shadow-gold hover:opacity-90"
-            >
-              <Navigation className="h-4 w-4" />
-              Get Directions
-            </a>
           </div>
         </section>
 

@@ -33,7 +33,8 @@ export const residence = {
   label: "All Functions",
   name: "Bhatnagar Residence",
   address: "H.No. 19/5, Spring Field Colony, Sector-32, Faridabad - 121003 (Hr.)",
-  mapQuery: "Spring Field Colony, Sector 32, Faridabad, Haryana 121003",
+  // Exact pin shared by the family
+  mapQuery: "28.449648,77.316170",
 };
 
 export const venue = {

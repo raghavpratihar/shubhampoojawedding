@@ -187,9 +187,9 @@ export default function App() {
             <Divider />
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
               {locations.map((place) => (
-                <article key={place.name}>
+                <article key={place.mapQuery}>
                   <p className="font-cinzel text-xs text-sage-deep tracking-widest uppercase">{place.label}</p>
-                  <h3 className="mt-2 font-script text-4xl text-rose-deep">{place.name}</h3>
+                  {place.name && <h3 className="mt-2 font-script text-4xl text-rose-deep">{place.name}</h3>}
                   <p className="mt-2 font-serif-display text-lg text-foreground/80">{place.address}</p>
                   <div className="mt-4 overflow-hidden rounded-2xl border border-gold-soft shadow-elegant">
                     <iframe
@@ -200,7 +200,7 @@ export default function App() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="strict-origin-when-cross-origin"
-                      title={`${place.name} Location`}
+                      title={`${place.name || place.address} Location`}
                     />
                   </div>
                   <a

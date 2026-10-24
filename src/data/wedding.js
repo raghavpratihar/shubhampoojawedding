@@ -31,7 +31,7 @@ export const weddingDate = {
 
 export const residence = {
   label: "All Functions",
-  name: "Bhatnagar Residence",
+  name: "",
   address: "H.No. 19/5, Spring Field Colony, Sector-32, Faridabad - 121003 (Hr.)",
   // Exact pin shared by the family
   mapQuery: "28.449648,77.316170",
@@ -46,7 +46,7 @@ export const venue = {
 
 export const locations = [residence, venue];
 
-const at = (place) => `${place.name}, ${place.address}`;
+const at = (place) => [place.name, place.address].filter(Boolean).join(", ");
 
 export const eventDays = [
   {

@@ -39,7 +39,7 @@ export default function App() {
         {/* Main Banner */}
         <section className="relative min-h-screen w-full overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}images/mainbg.jpg`}
+            src={`${import.meta.env.BASE_URL}images/web/mainbg.jpg`}
             alt={`${couple.groom} and ${couple.bride} wedding illustration`}
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -101,7 +101,7 @@ export default function App() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {day.events.map((event) => (
                     <article key={event.title} className="relative rounded-2xl overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 border border-gold-soft min-h-[380px] flex">
-                      <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover" />
+                      <img src={event.image} alt={event.title} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                       <div className="absolute inset-0 bg-black/45"></div>
                       <div className="relative w-full p-6 sm:p-8 text-center text-slate-50 flex flex-col justify-center">
                         <h4 className="font-script text-4xl sm:text-5xl text-cream">{event.title}</h4>

@@ -52,17 +52,17 @@ export const eventDays = [
   {
     day: "Thursday, 26th November 2026",
     events: [
-      { title: "Haldi", desc: "A golden beginning to a beautiful journey", time: "10:00 AM", image: img("haldi.png"), venue: at(residence) },
-      { title: "Mehendi", desc: "Henna, laughter and colours of love", time: "6:00 PM", image: img("mehendi.png"), venue: at(residence) },
-      { title: "Sangeet", desc: "A night of music, dance and cherished memories", time: "7:00 PM", image: img("sanget.png"), venue: at(residence) },
+      { title: "Haldi", desc: "A golden beginning to a beautiful journey", time: "10:00 AM", image: img("web/haldi.jpg"), venue: at(residence) },
+      { title: "Mehendi", desc: "Henna, laughter and colours of love", time: "6:00 PM", image: img("web/mehendi.jpg"), venue: at(residence) },
+      { title: "Sangeet", desc: "A night of music, dance and cherished memories", time: "7:00 PM", image: img("web/sanget.jpg"), venue: at(residence) },
     ],
   },
   {
     day: "Friday, 27th November 2026",
     events: [
-      { title: "Sehrabandi & Ghurchari", desc: "The groom dons the sehra and mounts the ghodi", time: "5:00 PM", image: img("varmal.png"), venue: at(residence) },
-      { title: "Departure of Barat", desc: "The baraat sets off with music and dance", time: "6:00 PM", image: img("recept.jpg"), venue: at(residence) },
-      { title: "Reassemble of Barat", desc: "The baraat gathers for the wedding ceremony", time: "7:00 PM", image: img("phere.png"), venue: at(venue) },
+      { title: "Sehrabandi & Ghurchari", desc: "The groom dons the sehra and mounts the ghodi", time: "5:00 PM", image: img("web/varmal.jpg"), venue: at(residence) },
+      { title: "Departure of Barat", desc: "The baraat sets off with music and dance", time: "6:00 PM", image: img("web/recept.jpg"), venue: at(residence) },
+      { title: "Reassemble of Barat", desc: "The baraat gathers for the wedding ceremony", time: "7:00 PM", image: img("web/phere.jpg"), venue: at(venue) },
     ],
   },
 ];
